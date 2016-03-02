@@ -1,0 +1,13 @@
+## Hello, Marcus!
+### Marcus the Robot is this project's mascot.  
+
+- I collected movie reviews from Rotten Tomatoes for nearly every movie from the past 5 years.
+- Then I tokenized the reviews into word-count vectors, and used Latent Dirichlet Allocation to find the 100 most dominant "topics".  
+- I manually went through the word-lists associated with each topic, and tried to characterize them with a short description.  Some were obvious - horror movies have lots of words like "blood", "gore", "terror", and "scared" - and some are less well-defined by their words.  
+- "Marcus" accepts the name of a movie, and then reports the descriptions associated with the major topics that LDA assigned to that movie, both from critics and audience reviews.  
+- He also shows a correlation chart, associating each topic with average box office gross for movies that are labeled with that topic.
+- Finally, Marcus makes a prediction as to how much money that movie will make!  In those cases where actual box office revenue figures are available, you get to see how close his prediction was to the real number.  
+
+Here's why this project is more of a fanciful exercise, rather than a reproducible money-making effort:  
+- LDA is not a stable algorithm, meaning that topic #7 on one run won't be labeled topic #7 on the next run.  That *topic* will probably still be there, somewhere, as a list of words compiled from the document-term and document-topic matrices that come out of LDA, but its vector index may (and probably will) be different on each run-through.  
+- That means that the design matrix fed into the regression model that makes revenue predictions won't be stable across updates to the topic model.  In other words, the algorithm may learn, on its first run, that topic #7, which we've associated with cartoons (for example), is a good predictor of revenue.  But then a month goes by, and since this isn't an *online* algorithm, we need to run the data collection script (get\_movie\_data.ipynb) again, run LDA on the new data, and (somewhat laboriously) re-define all the topic descriptions by hand...AND, the topics won't be in the same order!  So while the cartoon topic will likely still prove to be a good predictor, it won't be topic #7 anymore...and so the model we fit previously is useless for the new dataset.  That's not a very good way to build a durable predictive framework, which is why Marcus is not destined for Robot Fame.  I mainly wanted to see if I could code up a Gibbs Sampler from scratch, and tie that into some kind of predictive modeling.  It turns out I can, but it doesn't mean I should!
