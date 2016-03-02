@@ -1,7 +1,12 @@
-## Hello, Marcus!
+## Hello, Marcus! 
+![Marcus](img/marcus.png)
 ### Marcus the Robot is this project's mascot.  
 
-- I collected movie reviews from Rotten Tomatoes for nearly every movie from the past 5 years.
+#### This project was an exercise in writing a [Markov Chain Monte Carlo](https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo) algorithm from scratch, in Python, and applying it to a [Natural Language Processing](https://en.wikipedia.org/wiki/Natural_language_processing) problem.  In particular, I used a [Collapsed Gibbs Sampler](https://en.wikipedia.org/wiki/Gibbs_sampling#Collapsed_Gibbs_sampler) to build a topic model, and then analyzed a series of movie reviews to make inferences about box office success.  
+
+Here's what I did:  
+
+- I collected movie reviews from [Rotten Tomatoes](http://www.rottentomatoes.com/) for nearly every movie from the past 5 years, along with box office data from [BoxOfficeMojo](http://www.boxofficemojo.com/).
 - Then I tokenized the reviews into word-count vectors, and used [Latent Dirichlet Allocation](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) to find the 100 most dominant "topics".  
 - I manually went through the word-lists associated with each topic, and tried to characterize them with a short description.  Some were obvious - horror movies have lots of words like "blood", "gore", "terror", and "scared" - and some are less well-defined by their words.  
 - "Marcus" accepts the name of a movie, and then reports the descriptions associated with the major topics that LDA assigned to that movie, both from critics and audience reviews.  
