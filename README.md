@@ -2,7 +2,7 @@
 ![Marcus](img/marcus2.png)
 ### Marcus the Robot is this project's mascot.  
 
-#### This project was an exercise in writing a [Markov Chain Monte Carlo](https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo) algorithm from scratch, in Python, and applying it to a [Natural Language Processing](https://en.wikipedia.org/wiki/Natural_language_processing) problem.  In particular, I used a [Collapsed Gibbs Sampler](https://en.wikipedia.org/wiki/Gibbs_sampling#Collapsed_Gibbs_sampler) to build a topic model, and then analyzed a series of movie reviews to make inferences about box office success.  
+This project was an exercise in writing a [Markov Chain Monte Carlo](https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo) algorithm from scratch, in Python, and applying it to a [Natural Language Processing](https://en.wikipedia.org/wiki/Natural_language_processing) problem.  In particular, I used a [Collapsed Gibbs Sampler](https://en.wikipedia.org/wiki/Gibbs_sampling#Collapsed_Gibbs_sampler) to build a topic model, and then analyzed a series of movie reviews to make inferences about box office success.  
 
 Here's what I did:  
 
